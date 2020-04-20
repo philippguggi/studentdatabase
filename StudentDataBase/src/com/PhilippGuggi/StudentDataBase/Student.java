@@ -50,17 +50,29 @@ public class Student {
 				courses = courses + "\n" + course;
 				tuitionBalance = tuitionBalance + costOfCourse;
 			} else {
-				System.out.println("Break");
 				break;
 			}
 		} while (1 != 0);
 			
 		System.out.println("Enrolled in: " + courses);
 		System.out.println();
-		System.out.println("Tuition Balance: " + tuitionBalance);
 	}
 	
-	// View balance and pay tuition
+	// View balance 
+	public void viewBalance() {
+		System.out.println("Your balance is: € " + tuitionBalance + ".");
+	}
+
+	// Pay tuition
+	public void payTuition() {
+		viewBalance();
+		System.out.print("Enter your payment: € ");
+		Scanner in = new Scanner(System.in);
+		int payment = in.nextInt();
+		tuitionBalance = tuitionBalance - payment;
+		System.out.println("Thank your for your payment of € " + payment + ".");
+		viewBalance();
+	}
 	
 	// Show status
 }
