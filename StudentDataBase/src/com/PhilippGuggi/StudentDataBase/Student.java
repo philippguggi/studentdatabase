@@ -80,7 +80,7 @@ public class Student extends Courses{
 				break;
 			}
 		} while (1 != 0);
-}
+	}
 
 	// View balance
 	public void viewBalance() {
