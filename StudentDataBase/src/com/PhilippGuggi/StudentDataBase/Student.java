@@ -34,16 +34,16 @@ public class Student extends Courses{
 
 	// Getting the courses
 	Courses Object101 = new Courses();
-	ArrayList<String> cours101 = Object101.cours101();
+	ArrayList<String> course101 = Object101.cours101();
 	
 	Courses Object201 = new Courses();
-	ArrayList<String> cours201 = Object201.cours201();
+	ArrayList<String> course201 = Object201.cours201();
 	
 	Courses Object301 = new Courses();
-	ArrayList<String> cours301 = Object301.cours301();
+	ArrayList<String> course301 = Object301.cours301();
 	
 	Courses Object401 = new Courses();
-	ArrayList<String> cours401 = Object401.cours401();
+	ArrayList<String> course401 = Object401.cours401();
 	
 	// Generate an ID
 	private void setStudentID() {
@@ -61,19 +61,20 @@ public class Student extends Courses{
 			String course = in.nextLine();
 			if (course.toUpperCase().equals("C")) {
 				if (gradeYear == 1) {
-					System.out.println(cours101);
-				};
-				if (gradeYear == 2) {
-					System.out.println(cours201);
-				};
-				if (gradeYear == 3) {
-					System.out.println(cours301);
-				};
-				if (gradeYear == 4) {
-					System.out.println(cours401);
+					System.out.println(course101.toString().replace("[", "").replace("]", ""));
+					System.out.println();
+				} else if (gradeYear == 2) {
+					System.out.println(course201.toString().replace("[", "").replace("]", ""));
+					System.out.println();
+				} else if (gradeYear == 3 ) {
+					System.out.println(course301.toString().replace("[", "").replace("]", ""));
+					System.out.println();
+				} else {
+					System.out.println(course401.toString().replace("[", "").replace("]", ""));
+					System.out.println();
 				};
 			} else if (!course.toUpperCase().equals("Q")) {
-				courses = courses + "\n" + course.substring(0, 1).toUpperCase() + course.substring(1);
+				courses = courses + "\n " + course.substring(0, 1).toUpperCase() + course.substring(1);
 				tuitionBalance = tuitionBalance + costOfCourse;
 				} else {	
 				break;

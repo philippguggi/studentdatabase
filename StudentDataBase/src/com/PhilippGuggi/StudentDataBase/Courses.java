@@ -15,16 +15,16 @@ class AlphabeticalComparator implements Comparator<String> {
 public class Courses {
 	protected ArrayList<String> cours101() {
 		ArrayList<String> cours101 = new ArrayList<String>();
-		cours101.add("Math 101");
-		cours101.add("History 101");
-		cours101.add("Engineering 101");
-		cours101.add("English 101");
-		cours101.add("Psychology 101");
-		cours101.add("Computer Science 101");
-		cours101.add("Physics 101");
-		cours101.add("Chemistry 101");
-		cours101.add("Art 101");
-		cours101.add("Religion 101");
+		cours101.add("\nMath 101");
+		cours101.add("\nHistory 101");
+		cours101.add("\nEngineering 101");
+		cours101.add("\nEnglish 101");
+		cours101.add("\nPsychology 101");
+		cours101.add("\nComputer Science 101");
+		cours101.add("\nPhysics 101");
+		cours101.add("\nChemistry 101");
+		cours101.add("\nArt 101");
+		cours101.add("\nReligion 101");
 		
 	// Sorting the courses objects
 		Collections.sort(cours101, new AlphabeticalComparator());
@@ -36,18 +36,18 @@ public class Courses {
 	
 	protected ArrayList<String> cours201() {
 		ArrayList<String> cours201 = new ArrayList<String>();
-		cours201.add("Math 201");
-		cours201.add("History 201");
-		cours201.add("Engineering 201");
-		cours201.add("English 201");
-		cours201.add("Psychology 201");
-		cours201.add("Computer Science 201");
-		cours201.add("Physics 201");
-		cours201.add("Chemistry 201");
-		cours201.add("Art 201");
-		cours201.add("Religion 201");
-		cours201.add("Business Administration 201");
-		cours201.add("Accounting 201");
+		cours201.add("\nMath 201");
+		cours201.add("\nHistory 201");
+		cours201.add("\nEngineering 201");
+		cours201.add("\nEnglish 201");
+		cours201.add("\nPsychology 201");
+		cours201.add("\nComputer Science 201");
+		cours201.add("\nPhysics 201");
+		cours201.add("\nChemistry 201");
+		cours201.add("\nArt 201");
+		cours201.add("\nReligion 201");
+		cours201.add("\nBusiness Administration 201");
+		cours201.add("\nAccounting 201");
 		
 	// Sorting the courses objects
 		Collections.sort(cours201, new AlphabeticalComparator());
@@ -59,16 +59,16 @@ public class Courses {
 	
 	protected ArrayList<String> cours301() {
 		ArrayList<String> cours301 = new ArrayList<String>();
-		cours301.add("Math 301");
-		cours301.add("History 301");
-		cours301.add("Engineering 301");
-		cours301.add("English 301");
-		cours301.add("Calculus 301");
-		cours301.add("Computer Science 301");
-		cours301.add("Physics 301");
-		cours301.add("Chemistry 301");
-		cours301.add("Business Administration 301");
-		cours301.add("Accounting 301");
+		cours301.add("\nMath 301");
+		cours301.add("\nHistory 301");
+		cours301.add("\nEngineering 301");
+		cours301.add("\nEnglish 301");
+		cours301.add("\nCalculus 301");
+		cours301.add("\nComputer Science 301");
+		cours301.add("\nPhysics 301");
+		cours301.add("\nChemistry 301");
+		cours301.add("\nBusiness Administration 301");
+		cours301.add("\nAccounting 301");
 		
 	// Sorting the courses objects
 		Collections.sort(cours301, new AlphabeticalComparator());
@@ -80,14 +80,14 @@ public class Courses {
 	
 	protected ArrayList<String> cours401() {
 		ArrayList<String> cours401 = new ArrayList<String>();
-		cours401.add("Math 401");
-		cours401.add("History 401");
-		cours401.add("Engineering 401");
-		cours401.add("English 401");
-		cours401.add("Calculus 401");
-		cours401.add("Computer Science 401");
-		cours401.add("Business Administration 401");
-		cours401.add("Accounting 401");
+		cours401.add("\nMath 401");
+		cours401.add("\nHistory 401");
+		cours401.add("\nEngineering 401");
+		cours401.add("\nEnglish 401");
+		cours401.add("\nCalculus 401");
+		cours401.add("\nComputer Science 401");
+		cours401.add("\nBusiness Administration 401");
+		cours401.add("\nAccounting 401");
 		
 	// Sorting the courses objects
 		Collections.sort(cours401, new AlphabeticalComparator());
@@ -113,5 +113,3 @@ public class Courses {
 		return cours401();
 	}
 }
-
-		
