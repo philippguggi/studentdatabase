@@ -1,8 +1,9 @@
 package com.PhilippGuggi.StudentDataBase;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Student {
+public class Student extends Courses{
 	private String firstName;
 	private String lastName;
 	private int gradeYear;
@@ -28,12 +29,21 @@ public class Student {
 			System.out.print("1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter student grade level: ");
 			this.gradeYear = in.nextInt();
 		}
-		
-
 		setStudentID();
 	}
 
+	// Getting the courses
+	Courses Object101 = new Courses();
+	ArrayList<String> cours101 = Object101.cours101();
 	
+	Courses Object201 = new Courses();
+	ArrayList<String> cours201 = Object201.cours201();
+	
+	Courses Object301 = new Courses();
+	ArrayList<String> cours301 = Object301.cours301();
+	
+	Courses Object401 = new Courses();
+	ArrayList<String> cours401 = Object401.cours401();
 	
 	// Generate an ID
 	private void setStudentID() {
@@ -46,17 +56,30 @@ public class Student {
 	public void enroll() {
 		// Get inside a loop, user hits Q
 		do {
-			System.out.print("Enter course to enroll (Q to quit): ");
+			System.out.print("Enter course to enroll (Q to quit, C for courses): ");
 			Scanner in = new Scanner(System.in);
 			String course = in.nextLine();
-			if (!course.toUpperCase().equals("Q")) {
+			if (course.toUpperCase().equals("C")) {
+				if (gradeYear == 1) {
+					System.out.println(cours101);
+				};
+				if (gradeYear == 2) {
+					System.out.println(cours201);
+				};
+				if (gradeYear == 3) {
+					System.out.println(cours301);
+				};
+				if (gradeYear == 4) {
+					System.out.println(cours401);
+				};
+			} else if (!course.toUpperCase().equals("Q")) {
 				courses = courses + "\n" + course.substring(0, 1).toUpperCase() + course.substring(1);
 				tuitionBalance = tuitionBalance + costOfCourse;
-			} else {
+				} else {	
 				break;
 			}
 		} while (1 != 0);
-	}
+}
 
 	// View balance
 	public void viewBalance() {
