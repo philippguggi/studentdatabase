@@ -23,10 +23,18 @@ public class Student {
 
 		System.out.print("1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter student grade level: ");
 		this.gradeYear = in.nextInt();
+		if (this.gradeYear > 4) {
+			System.err.println("Please enter a number between 1 and 4.");
+			System.out.print("1 - Freshman\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter student grade level: ");
+			this.gradeYear = in.nextInt();
+		}
+		
 
 		setStudentID();
 	}
 
+	
+	
 	// Generate an ID
 	private void setStudentID() {
 		// Grade Level + ID
@@ -42,7 +50,7 @@ public class Student {
 			Scanner in = new Scanner(System.in);
 			String course = in.nextLine();
 			if (!course.toUpperCase().equals("Q")) {
-				courses = courses + "\n " + course;
+				courses = courses + "\n" + course.substring(0, 1).toUpperCase() + course.substring(1);
 				tuitionBalance = tuitionBalance + costOfCourse;
 			} else {
 				break;
@@ -68,7 +76,7 @@ public class Student {
 
 	// Show status
 	public String toString() {
-		return "Name: " + firstName + " " + lastName + "\nGrade Level: " + gradeYear + "\nStudent ID: " + studentID
+		return "Name: " + firstName.substring(0, 1).toUpperCase() + firstName.substring(1) + " " + lastName.substring(0, 1).toUpperCase() + lastName.substring(1) + "\nGrade Level: " + gradeYear + "\nStudent ID: " + studentID
 				+ "\nCourses Enrolled: " + courses + "\nBalance: € " + tuitionBalance + "\n";
 	}
 }
