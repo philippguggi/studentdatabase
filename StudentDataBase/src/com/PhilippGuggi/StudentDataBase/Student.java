@@ -94,7 +94,11 @@ public class Student extends Courses{
 		Scanner in = new Scanner(System.in);
 		int payment = in.nextInt();
 		tuitionBalance = tuitionBalance - payment;
-		System.out.println("Thank your for your payment of € " + payment + ".");
+		if (tuitionBalance <= 0) {
+			System.err.println("You don't need to pay that much! For the next course you need to pay " + Math.abs(tuitionBalance) + " € less.");
+		} else {
+			System.out.println("Thank your for your payment of € " + payment + ".");
+		}
 		viewBalance();
 	}
 
