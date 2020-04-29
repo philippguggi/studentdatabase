@@ -3,7 +3,7 @@ package com.PhilippGuggi.StudentDataBase;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Student extends Courses{
+public class Student extends Courses {
 	private String firstName;
 	private String lastName;
 	private int gradeYear;
@@ -12,6 +12,7 @@ public class Student extends Courses{
 	private int tuitionBalance = 0;
 	private static int costOfCourse = 600;
 	private static int id = 1000;
+	private int amountOfCourses = 0;
 
 	// Constructor: prompts user to enter student's name and year
 	public Student() {
@@ -35,16 +36,16 @@ public class Student extends Courses{
 	// Getting the courses
 	Courses Object101 = new Courses();
 	ArrayList<String> course101 = Object101.cours101();
-	
+
 	Courses Object201 = new Courses();
 	ArrayList<String> course201 = Object201.cours201();
-	
+
 	Courses Object301 = new Courses();
 	ArrayList<String> course301 = Object301.cours301();
-	
+
 	Courses Object401 = new Courses();
 	ArrayList<String> course401 = Object401.cours401();
-	
+
 	// Generate an ID
 	private void setStudentID() {
 		// Grade Level + ID
@@ -75,11 +76,13 @@ public class Student extends Courses{
 				};
 			} else if (!course.toUpperCase().equals("Q")) {
 				courses = courses + "\n " + course.substring(0, 1).toUpperCase() + course.substring(1);
-				tuitionBalance = tuitionBalance + costOfCourse;
+				amountOfCourses++;
+				tuitionBalance = costOfCourse * amountOfCourses;
 				} else {	
 				break;
 			}
-		} while (1 != 0);
+		} while(1!=0);
+
 	}
 
 	// View balance
@@ -89,22 +92,29 @@ public class Student extends Courses{
 
 	// Pay tuition
 	public void payTuition() {
-		viewBalance();
-		System.out.print("Enter your payment: € ");
-		Scanner in = new Scanner(System.in);
-		int payment = in.nextInt();
-		tuitionBalance = tuitionBalance - payment;
-		if (tuitionBalance <= 0) {
-			System.err.println("You don't need to pay that much! For the next course you need to pay " + Math.abs(tuitionBalance) + " € less.");
-		} else {
-			System.out.println("Thank your for your payment of € " + payment + ".");
-		}
-		viewBalance();
+		do {
+			viewBalance();
+			System.out.print("Enter your payment: € ");
+			Scanner in = new Scanner(System.in);
+			int payment = in.nextInt();
+			tuitionBalance = tuitionBalance - payment;
+			if (tuitionBalance < 0) {
+				System.err.println("You are paying too much, to continue, you need to enter a lower amount.");
+				tuitionBalance = costOfCourse * amountOfCourses;
+				continue;
+			} else {
+				System.out.println("Thank your for your payment of € " + payment + ".");
+				viewBalance();
+				break;
+			}
+
+		} while (1 != 0);
 	}
 
 	// Show status
 	public String toString() {
-		return "Name: " + firstName.substring(0, 1).toUpperCase() + firstName.substring(1) + " " + lastName.substring(0, 1).toUpperCase() + lastName.substring(1) + "\nGrade Level: " + gradeYear + "\nStudent ID: " + studentID
-				+ "\nCourses Enrolled: " + courses + "\nBalance: € " + tuitionBalance + "\n";
+		return "Name: " + firstName.substring(0, 1).toUpperCase() + firstName.substring(1) + " "
+				+ lastName.substring(0, 1).toUpperCase() + lastName.substring(1) + "\nGrade Level: " + gradeYear
+				+ "\nStudent ID: " + studentID + "\nCourses Enrolled: " + courses + "\nBalance: € " + tuitionBalance + "\n";
 	}
 }
