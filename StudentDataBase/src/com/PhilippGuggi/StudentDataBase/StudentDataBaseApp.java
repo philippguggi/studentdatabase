@@ -9,6 +9,7 @@ public class StudentDataBaseApp {
 		// Create n number of new students
 		// Creating array of object based on a different size.
 		System.out.print("Enter number of new student to enroll: ");
+		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
 		int numOfStudents = in.nextInt();
 		Student[] students = new Student[numOfStudents];

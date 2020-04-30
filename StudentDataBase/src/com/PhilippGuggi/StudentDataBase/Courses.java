@@ -28,9 +28,7 @@ public class Courses {
 		
 	// Sorting the courses objects
 		Collections.sort(cours101, new AlphabeticalComparator());
-		for(String courses101: cours101) {
-			return cours101;
-		}
+		
 		return cours101;
 	};
 	
@@ -51,9 +49,7 @@ public class Courses {
 		
 	// Sorting the courses objects
 		Collections.sort(cours201, new AlphabeticalComparator());
-		for(String courses201: cours201) {
-			return cours201;
-		}
+		
 		return cours201;
 	};
 	
@@ -72,9 +68,7 @@ public class Courses {
 		
 	// Sorting the courses objects
 		Collections.sort(cours301, new AlphabeticalComparator());
-		for(String courses301: cours301) {
-			return cours301;
-		}
+		
 		return cours301;
 	};
 	
@@ -91,25 +85,7 @@ public class Courses {
 		
 	// Sorting the courses objects
 		Collections.sort(cours401, new AlphabeticalComparator());
-		for(String courses401: cours401) {
-			return cours401;
-		}
+		
 		return cours401;
 	};
-	
-	public ArrayList<String> getMyList101() {
-		return cours101();
-	}
-	
-	public ArrayList<String> getMyList201() {
-		return cours201();
-	}
-	
-	public ArrayList<String> getMyList301() {
-		return cours301();
-	}
-	
-	public ArrayList<String> getMyList401() {
-		return cours401();
-	}
 }

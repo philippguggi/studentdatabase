@@ -16,6 +16,7 @@ public class Student extends Courses {
 
 	// Constructor: prompts user to enter student's name and year
 	public Student() {
+		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter student first name: ");
 		this.firstName = in.nextLine();
@@ -33,18 +34,18 @@ public class Student extends Courses {
 		setStudentID();
 	}
 
-	// Getting the courses
-	Courses Object101 = new Courses();
-	ArrayList<String> course101 = Object101.cours101();
+	// Declaring new Objects
+	Courses C101 = new Courses();
+	ArrayList<String> course101 = C101.cours101();
 
-	Courses Object201 = new Courses();
-	ArrayList<String> course201 = Object201.cours201();
+	Courses C201 = new Courses();
+	ArrayList<String> course201 = C201.cours201();
 
-	Courses Object301 = new Courses();
-	ArrayList<String> course301 = Object301.cours301();
+	Courses C301 = new Courses();
+	ArrayList<String> course301 = C301.cours301();
 
-	Courses Object401 = new Courses();
-	ArrayList<String> course401 = Object401.cours401();
+	Courses C401 = new Courses();
+	ArrayList<String> course401 = C401.cours401();
 
 	// Generate an ID
 	private void setStudentID() {
@@ -58,6 +59,7 @@ public class Student extends Courses {
 		// Get inside a loop, user hits Q
 		do {
 			System.out.print("Enter course to enroll (Q to quit, C for courses): ");
+			@SuppressWarnings("resource")
 			Scanner in = new Scanner(System.in);
 			String course = in.nextLine();
 			if (course.toUpperCase().equals("C")) {
@@ -95,6 +97,7 @@ public class Student extends Courses {
 		do {
 			viewBalance();
 			System.out.print("Enter your payment: € ");
+			@SuppressWarnings("resource")
 			Scanner in = new Scanner(System.in);
 			int payment = in.nextInt();
 			tuitionBalance = tuitionBalance - payment;
